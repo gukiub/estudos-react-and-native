@@ -28,12 +28,18 @@ const listCustomer = [
     },
 ]
 
+
 const App = () => {
+
+    const handleClick = (e, id) => {
+        console.log('deletar cliente')
+        alert(`id do cliente ${id}`)
+    }
 
     const renderCustomers = (customer, index) => {
         return (
             <div key={`customer-${customer.id}`}>
-                <li>{customer.name}</li>
+                <li>{customer.name} <button onClick={(e) => handleClick(e, customer.id)}>Deletar cliente x</button></li>
                 {customer.skills.map(renderSkills)}
             </div>
         )
@@ -46,7 +52,7 @@ const App = () => {
             </div>
         )
     }
-
+    
     return (
         <div>
             <p>teste</p>
