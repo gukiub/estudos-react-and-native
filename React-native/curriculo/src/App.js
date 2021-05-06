@@ -1,21 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, Alert, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Feather';
 
 import foto from './assets/foto.jpg';
+import Card from './components/Card';
 
 const App = () => {
 
   function handleRedeSocial(rede_social) {
     switch (rede_social) {
       case 'linkedin':
-        Alert.alert('Meu Linkedin','https://linkedin.com/in/gustavo-lafant-47023a158/')
+        Alert.alert('Meu Linkedin', 'https://linkedin.com/in/gustavo-lafant-47023a158/')
         break
       case 'github':
-        Alert.alert('Meu Github','https://github.com/gukiub')
+        Alert.alert('Meu Github', 'https://github.com/gukiub')
         break
       case 'facebook':
-        Alert.alert('Meu Facebook','https://facebook.com/gustavo.lafant')
+        Alert.alert('Meu Facebook', 'https://facebook.com/gustavo.lafant')
         break
     }
   }
@@ -37,31 +38,18 @@ const App = () => {
             <TouchableOpacity onPress={() => handleRedeSocial('linkedin')}>
               <Icon name="linkedin" size={30} />
             </TouchableOpacity>
+
           </View>
         </View>
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Experiencia Profissional</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>Aspnet.core</Text>
-              <Text style={style.card_content_text}>Spring MVC</Text>
-              <Text style={style.card_content_text}>Android</Text>
-            </View>
-          </View>
-        </View>
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Formação Academica</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>Curso de inglês particular</Text>
-              <Text style={style.card_content_text}>Uninove</Text>
-            </View>
-          </View>
-        </View>
+        <Card titulo="Formação Academica">
+          <Text style={style.card_content_text}>Curso de inglês particular</Text>
+          <Text style={style.card_content_text}>Uninove</Text>
+        </Card>
+        <Card titulo="Experiencia Profissional">
+          <Text style={style.card_content_text}>Aspnet.core</Text>
+          <Text style={style.card_content_text}>Spring MVC</Text>
+          <Text style={style.card_content_text}>Android</Text>
+        </Card>
       </View>
     </>
   );
@@ -97,27 +85,10 @@ const style = StyleSheet.create({
     width: '60%',
     marginTop: 20
   },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#fff'
-  },
-  card_container: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20
-  },
-  card_content: {
-    marginTop: 20
-  },
   card_content_text: {
     color: '#939393',
     marginBottom: 10
-  }
+}
 })
 
 
