@@ -27,13 +27,13 @@ export default function Routes() {
                         headerTransparent: true,
                         headerTitle: () => <Header />,
                     }}/>
-                <Stack.Screen name="Cart" component={Cart} options={{
+                <Stack.Screen 
+                name="Cart" 
+                component={Cart} 
+                options={{
                     headerTransparent: true,
                     headerTitle: () => <Header />,
                     headerBackTitleVisible: false,
-                    headerLeftContainerStyle: {
-                        marginleft: 20,
-                    },
                     headerBackImage: () => (
                         <FeatherIcon name="chevron-left" size={24} color="#f3f9ff" />
                     )

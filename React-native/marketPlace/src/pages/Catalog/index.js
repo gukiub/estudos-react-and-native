@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import FloatingCart from '../../components/FloatingCart';
 
 import formatValue from '../../utils/formatValue';
+import api from '../../services/api';
 
 import {
     Container,
@@ -19,30 +20,17 @@ import {
     ProductPrice
 } from './styles';
 
-export default function App() {
-    const [products, setProducts] = useState([
-        {
-            id: '1',
-            title: 'Assinatura Switch Online',
-            image_url:
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Nintendo_eShop_Switch_logo.svg/1200px-Nintendo_eShop_Switch_logo.svg.png',
-            price: 150,
-        },
-        {
-            id: '2',
-            title: 'Créditos na PSN',
-            image_url:
-                'https://img.hype.games/cdn/15a233de-6b9c-4397-a4ae-40b7e3e6f43dpsn-store-logo.png',
-            price: 540,
-        },
-        {
-            id: '3',
-            title: 'Créditos na PSN',
-            image_url:
-                'https://img.hype.games/cdn/15a233de-6b9c-4397-a4ae-40b7e3e6f43dpsn-store-logo.png',
-            price: 540,
-        },
-    ]);
+export default function Catalog() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        async function loadProducts() {
+            const { data } = await api.get('/products');
+            setProducts(data);
+        }
+        loadProducts();
+    }, []);
+
     return (
         <Container>
             <ProductContainer>
