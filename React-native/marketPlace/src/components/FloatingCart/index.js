@@ -18,7 +18,6 @@ export default function FloatingCart() {
     const navigation = useNavigation();
 
     const products = useSelector(({ cart }) => cart);
-    console.log(`variavel products : ${products}`);
 
     const cartSize = useMemo(() => {
         return products.length || 0;
