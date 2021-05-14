@@ -6,7 +6,9 @@ import formatValue from '../../../utils/formatValue'
 import { addToCartSuccess, updateAmountSuccess } from './actions'
 
 function* addToCart({ id }) {
-    const productExists = yield select((state) => state.cart.find((product) => product.id == id));
+    const productExists = yield select((state) => 
+        state.cart.find((product) => product.id === id)
+    );
 
     const currentAmount = productExists ? productExists.amount : 0;
     const amount = currentAmount + 1;

@@ -28,6 +28,7 @@ export const Product = styled.View`
     min-height: 130px;
     padding: 15px 10px;
     border-radius: 20px;
+    border: 1px solid #000;
 `;
 
 export const ProductImage = styled.Image`
