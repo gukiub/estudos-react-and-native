@@ -23,6 +23,7 @@ import {
 } from './styles';
 
 export default function Catalog() {
+
     const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
@@ -40,6 +41,7 @@ export default function Catalog() {
     }
 
     return (
+        <React.StrictMode>
         <Container>
             <ProductContainer>
                 <ProductList
@@ -64,5 +66,6 @@ export default function Catalog() {
             </ProductContainer>
             <FloatingCart />
         </Container>
+        </React.StrictMode>
     );
 };
