@@ -1,3 +1,5 @@
+// define o estado inicial com o qual a aplicação será iniciada
+// informações da lista inicial que vai ser compartilhada com a aplicação
 const INITIAL_STATE = {
   activeLesson: {},
   activeModule: {},
@@ -21,6 +23,7 @@ const INITIAL_STATE = {
   ],
 };
 
+// devolve o estado e observa as mudanças de estado do objeto curso
 export default function course(state = INITIAL_STATE, action) {
   if (action.type === "TOGGLE_LESSON") {
     return {

@@ -1,9 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-
-// import { Container } from './styles';
+import { bindActionCreators } from "redux"
 
 import * as CourseActions from "../../store/actions/course";
 
@@ -33,5 +31,5 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(CourseActions, dispatch);
-
+// repassa os valores do estado e a alteração para as funções acima e retorna na sidebar
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
