@@ -30,6 +30,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) =>
+//metodo que faz com que aja um bind da action para chamar apenas pelo nome sem referenciar o importnpm
   bindActionCreators(CourseActions, dispatch);
 // repassa os valores do estado e a alteração para as funções acima e retorna na sidebar
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
