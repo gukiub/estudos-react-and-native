@@ -16,12 +16,12 @@
     "node": "^16.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.4",
-    "serve": "^11.3.2",
+    "react-scripts": "^5.0.1",
+    "serve": "^14.2.6",
     "webpack-server": "^0.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-react": "^7.13.13",
     "babel-eslint": "^10.1.0",
@@ -31,6 +31,6 @@
     "eslint-watch": "^7.0.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^5.2.6"
   }
 }
